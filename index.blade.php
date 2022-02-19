@@ -2,6 +2,11 @@
 @section('main')
 <div class="row">
 <div class="col-sm-12">
+@if(session()->get('success'))
+ <div class="alert alert-success">
+ {{ session()->get('success') }} 
+ </div>
+@endif
  <h1 class="display-3">Contacts</h1> 
  <table class="table table-striped">
  <thead>
@@ -25,13 +30,13 @@
  <td>{{$contact->city}}</td>
  <td>{{$contact->country}}</td>
  <td>
- <a href="{{ route('contacts.edit',$contact->id)}}" class="btn btn-secondary">Edit</a>
+ <a href="{{ route('contacts.edit',$contact->id)}}" class="btn btn-outline-primary">Edit</a>
  </td>
  <td>
  <form action="{{ route('contacts.destroy', $contact->id)}}" method="post">
  @csrf
  @method('DELETE')
- <button class="btn btn-danger" type="submit">Delete</button>
+ <button class="btn btn-outline-danger" type="submit">Delete</button>
  </form>
  </td>
  </tr>
