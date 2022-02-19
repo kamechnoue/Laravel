@@ -17,7 +17,7 @@
  @csrf
  <div class="form-group"> 
  <label for="first_name">First Name:</label>
- <input type="text" class="form-control" name="first_name"/>
+ <input type="text" class="form-control  form-control-lg" name="first_name" placeholder="Votre prénom"/>
  </div>
  <div class="form-group">
  <label for="last_name">Last Name:</label>
